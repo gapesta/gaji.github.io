@@ -28,7 +28,7 @@ calculateBtn.addEventListener("click", () => {
 
 
     // Hitung total
-    const total = jam7 + jam7mgu + setenghri + hrbsa - val5 - val6;
+    const total = jam7 + jam7mgu + setenghri + hrbsa + 300 - val5 - val6;
 
     // Tampilkan total ke dalam elemen di web
     totalDisplay.textContent = total;
