@@ -21,7 +21,7 @@ calculateBtn.addEventListener("click", () => {
     let val6 = parseFloat(num6.value) || 0;
     
     //hitung gaji pulang jam 7
-    let jam7 = val1 * 35.02;
+    let jam7 = val1 * 55;
     let hrbsa = 35.02 * val2;
     let jam7mgu = 34.96 * val3;
     let setenghri = 21.88 * val4;
