@@ -92,3 +92,30 @@ button#reset-btn {
 button#reset-btn:hover {
     background-color: #b31f1f;
 }
+
+
+    /* Gaya untuk pop-up */
+    #popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 30px;
+        width: 300px; /* Lebar pop-up */
+        box-shadow: 0 0 12px 12px rgba(58, 56, 56, 0.5);
+        z-index: 1000;
+        text-align: center;
+      }
+      #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+      }
