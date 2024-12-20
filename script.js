@@ -34,7 +34,7 @@ calculateBtn.addEventListener("click", () => {
     let hrbsa = 35.02 * val2;
     let jam7mgu = 34.96 * val3;
     let setenghri = 21.88 * val4;
-    let jam12hrmggu = 4.367 * mgu12
+    let jam12hrmggu = 21.85 * mgu12
     let jam9 = 68.32 * val5;
     let ponteng = 80 * ptg;
 
