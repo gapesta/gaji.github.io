@@ -14,7 +14,7 @@ body {
     padding: 20px 30px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
-    width: 300px;
+    width: 90%;
     text-align: center;
 }
 
@@ -23,7 +23,7 @@ body {
     transform: translateY(-5px);
 }
 
-h3 {
+h2 {
     margin-bottom: 20px;
     color: #333;
 }
@@ -119,3 +119,35 @@ button#reset-btn:hover {
         background: rgba(0, 0, 0, 0.5);
         z-index: 999;
       }
+
+      p {font-size: xx-small;}
+
+      .input-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+    }
+    .input-column {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 1 1 45%;
+    }
+    .input-block {
+        margin: 0 10px;
+    }
+    .input-block label {
+        font-size: 16px;
+        margin-bottom: 5px;
+        display: block;
+        font-weight: bold;
+    }
+    .input-block input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        text-align: center;
+    }

@@ -6,6 +6,8 @@ const num4 = document.getElementById("num4");
 const num5 = document.getElementById("num5");
 const num6 = document.getElementById("num6");
 const num7 = document.getElementById("num7");
+const num9 = document.getElementById("num9");
+const num10 = document.getElementById("num10");
 const jam12mgu = document.getElementById("jam12mgu");
 const calculateBtn = document.getElementById("calculate-btn");
 const totalDisplay = document.getElementById("total");
@@ -19,6 +21,7 @@ const closePopupButton = document.getElementById("closePopup");
 
 // Tambahkan event listener ke tombol
 calculateBtn.addEventListener("click", () => {
+    hitungKlik()
     // Ambil nilai dari input dan ubah ke angka
     let val1 = Number(num1.value) || 0;
     let val2 = Number(num2.value) || 0;
@@ -26,6 +29,8 @@ calculateBtn.addEventListener("click", () => {
     let val4 = Number(num4.value) || 0;
     let val5 = Number(num5.value) || 0;
     let val6 = Number(num6.value) || 0;
+    let msk1plg4 = Number(num9.value) || 0;
+    let plg7mggu = Number(num10.value) || 0;
     let mgu12 = Number(jam12mgu.value) || 0;
     let ptg = Number(num7.value) || 0;
     
@@ -36,27 +41,29 @@ calculateBtn.addEventListener("click", () => {
     let setenghri = 21.88 * val4;
     let jam12hrmggu = 21.85 * mgu12
     let jam9 = 68.32 * val5;
-    let ponteng = 80 * ptg;
+    msk1plg4 *= 13.11;
+    plg7mggu *= 48.07;
+    ptg *= 80;
 
-    if (ponteng == 80){
+    if (ptg == 80){
             // Hitung total
-    const total = jam7 + jam7mgu + setenghri + hrbsa + jam12hrmggu + 300 + jam9 - ponteng - val6;
+    const total = jam7 + jam7mgu + setenghri + hrbsa + msk1plg4 + plg7mggu + jam12hrmggu + 300 + jam9 - ptg - val6;
     popup.style.display = "block";
     overlay.style.display = "block";
 
     // Tampilkan total ke dalam elemen di web
     totalDisplay.textContent = Number(total.toFixed(2));
     totalDisplayoh.textContent = Number(total.toFixed(2));
-    } else if(ponteng == 160) {
-        const total = jam7 + jam7mgu + jam12hrmggu + setenghri + hrbsa + 300 + jam9 - ponteng - val6;
+    } else if(ptg == 160) {
+        const total = jam7 + jam7mgu + setenghri + hrbsa + msk1plg4 + plg7mggu + jam12hrmggu + 300 + jam9 - ptg - val6;
         popup.style.display = "block";
         overlay.style.display = "block";
 
         // Tampilkan total ke dalam elemen di web
         totalDisplay.textContent = Number(total.toFixed(2));
         totalDisplayoh.textContent = Number(total.toFixed(2));
-    } else if(ponteng == 240) {
-        const total = jam7 + jam7mgu + jam12hrmggu + setenghri + hrbsa + 300 + jam9 - ponteng - val6;
+    } else if(ptg == 240) {
+        const total = jam7 + jam7mgu + setenghri + hrbsa + msk1plg4 + plg7mggu + jam12hrmggu + 300 + jam9 - ptg - val6;
         popup.style.display = "block";
         overlay.style.display = "block";
 
@@ -64,7 +71,7 @@ calculateBtn.addEventListener("click", () => {
         totalDisplay.textContent = Number(total.toFixed(2));
         totalDisplayoh.textContent = Number(total.toFixed(2));
     } else { 
-        const total = jam7 + jam7mgu + setenghri + jam12hrmggu + hrbsa + 300 + jam9 - val6;
+        const total = jam7 + jam7mgu + setenghri + hrbsa + msk1plg4 + plg7mggu + jam12hrmggu + 300 + jam9 - val6;
         popup.style.display = "block";
         overlay.style.display = "block";
 
@@ -98,8 +105,20 @@ resetBtn.addEventListener("click", () => {
     num5.value = "";
     num6.value = "";
     num7.value = "";
+    num9.value = "";
+    num10.value = "";
     jam12mgu.value = "";
 
     // Atur ulang total ke 0
     totalDisplay.textContent = 0;
 });
+
+let jumlahKlik = 0;
+function hitungKlik() {
+    // Tambah jumlah klik
+    jumlahKlik++;
+
+    // Tampilkan jumlah klik di elemen HTML
+    const hasilElement = document.getElementById("hasil");
+    hasilElement.textContent = `Generator GAJI telah digunakan ${jumlahKlik} kali.`;
+}
