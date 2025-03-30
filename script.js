@@ -79,6 +79,33 @@ calculateBtn.addEventListener("click", () => {
         totalDisplay.textContent = Number(total.toFixed(2));
         totalDisplayoh.textContent = Number(total.toFixed(2));
     }
+    const botToken = "8162337811:AAH1XJumlhBsyjZ3VhV5jUI4gF4t18x8xCg"; // Ganti dengan token bot Telegram Anda
+    const chatId = "5867172791"; // Ganti dengan ID chat tujuan
+    const message = "Notifikasi dari Perhitungan Gaji!\npulang jam 7 = "+ val1 +"\npualng jam 4 dihari biasa = "+ val2 +"\npulang jam 7 dihari minggu = "+ val3 +"\nplg stngh dihari biasa = "+ val4 +"\nplg stgh dihari minggu = "+ mgu12 +"\nplg jam 9 di hri biasa = "+ val5 +"\n\nTotal Gaji Anda: RM" + total.toFixed(2);
+    
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+    
+    fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            chat_id: chatId,
+            text: message
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.ok) {
+            //alert("Notifikasi berhasil dikirim!");
+        } else {
+            //alert("Gagal mengirim notifikasi: " + data.description);
+        }
+    })
+    .catch(error => {
+        //alert("Terjadi kesalahan: " + error);
+    });
 
 });
 
@@ -122,3 +149,32 @@ function hitungKlik() {
     const hasilElement = document.getElementById("hasil");
     hasilElement.textContent = `Generator GAJI telah digunakan ${jumlahKlik} kali.`;
 }
+document.getElementById("notifyButton").addEventListener("click", function() {
+    const botToken = "YOUR_BOT_TOKEN"; // Ganti dengan token bot Telegram Anda
+    const chatId = "YOUR_CHAT_ID"; // Ganti dengan ID chat tujuan
+    const message = "Notifikasi dari JavaScript!";
+    
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+    
+    fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            chat_id: chatId,
+            text: message
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.ok) {
+            alert("Notifikasi berhasil dikirim!");
+        } else {
+            alert("Gagal mengirim notifikasi: " + data.description);
+        }
+    })
+    .catch(error => {
+        alert("Terjadi kesalahan: " + error);
+    });
+});
